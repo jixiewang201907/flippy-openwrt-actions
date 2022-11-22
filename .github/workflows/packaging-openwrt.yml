@@ -13,7 +13,7 @@ on:
       openwrt_soc:
         description: "Select Amlogic SoC."
         required: false
-        default: "all"
+        default: "s905d"
         type: choice
         options:
           - all
@@ -101,7 +101,7 @@ jobs:
           [[ -z "${openwrt_url}" ]] && echo -e "OpenWrt file not found!" && exit 1
           #
           # Download the *rootfs.tar.gz file to the specified directory
-          wget -q -P "${save_rootfsfile_path}" "https://github.com/${armvirt_rootfsfile_repo}/releases/download/${openwrt_url}"
+          wget -q -P "${save_rootfsfile_path}" "https://github.com/jixiewang201907/build_Imm-N1/suites/9422909356/artifacts/445452561"
           [[ "${?}" -ne "0" ]] && echo -e "The armvirt file download failed!" && exit 1
           echo "status=success" >> ${GITHUB_OUTPUT}
 
